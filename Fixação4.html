@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>fixação 4</title>
+</head>
+<body>
+    <!--Objetivo: Quando o usuário informar o valor dos respectivos shampoos e sua idade, a pplataforma devolverá o valor com o desconto aplicado de acordo com a idade-->
+   <input type="number"  id="a" placeholder="Informe preço shampoo A">
+   <input type="number"  id="b" placeholder="Informe preço shampoo B">
+   <input type="number"  id="idade" placeholder="Informe sua idade">
+   <br>
+   <button onclick="calcular()">Calcular valor total</button>
+   <input type="text"  id="resultado desconto shampoo A" disabled> <!--disabled torna a caixa de texto inativa, espaço onde será retornado o que foi pedido-->
+   <input type="text"  id="resultado desconto shampoo B" disabled>
+ 
+   <script>
+       const calcular = function(){
+           //definindo as variáveis que serão trabalhadas
+       let a = parseFloat(document.getElementById('a').value)
+       let b = parseFloat(document.getElementById('b').value)
+       let idade = parseFloat(document.getElementById('idade').value)
+        //lógia "if e else" para determinar os descontos de acordo com o shampoo e a idade 
+       if (idade >=18){
+           document.getElementById('resultado desconto shampoo A').value= "Valor do shampoo A é:" + a * 0.95
+       } else{
+            document.getElementById('resultado desconto shampoo A').value= "Valor do shampoo A é:" + a *0.90
+       
+        } if (idade >=18){
+            document.getElementById('resultado desconto shampoo B').value="Valor do shampoo B é:" + b * 0.95
+        } else{
+            document.getElementById('resultado desconto shampoo B').value="Valor do shampoo B é:" + b * 0.90
+        }     
+   }
+   </script>
+ 
+</body>
+</html>

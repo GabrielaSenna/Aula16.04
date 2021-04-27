@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fixação 5</title>
+</head>
+<body>
+    <!--Objetivo: O usuário informará a quantidade de protudos A e B vendidos + o seu salário bruto, o sistema devolverá se ele ganhou ou não uma gratificação (sendo necessário atingir a meta de 10.000) e qual o valor final do salário-->
+    
+    <input type="number"  id="A" placeholder="Quantidade de produtos A vendido"> <!--Pedindo para o usuário informar a quantidade dos produtos-->
+    <input type="number"  id="B" placeholder="Quantidade de produtos B vendido">
+    <input type="number"  id="C" placeholder="salário bruto">
+    <button onclick="calcular()">Calcular salario</button>
+    <input type="text"  id="resultado" disabled> <!--disabled torna a caixa de texto inativa, espaço onde será retornado o que foi pedido-->
+
+    <script>
+        const calcular = function(){
+            //Definindo variáveis que irão ser trabalhadas
+            let A = parseFloat(document.getElementById('A').value)
+            let B = parseFloat(document.getElementById('B').value)
+            let C = parseFloat(document.getElementById('C').value)
+            
+            let pA = (A * 50) // p = produto
+            let pB = (B * 60)
+            let resultado = A + B * 1.2 //1.2 equivale a 20% (pedido pela questão)
+            document.getElementById ("resultado").value = resultado
+            
+            //lógica "if e else" + window alert para determinar o valor do salário final em forma de janela de aviso
+            if (pA + pB >= 1000 ){
+                document.getElementById('C').value = C * 1.2
+                window.alert("Parabéns! Você ganhou uma gratificação.")
+            } else{
+                document.getElementById('C').value = 10000 - (pA - pB)
+                window.alert("Meta não atingida, tente novamente no próximo mês!")
+                
+            }
+        }
+    </script>
+</body>
+</html>
